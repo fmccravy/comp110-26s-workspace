@@ -5,9 +5,8 @@ __author__ = "730941956"
 
 def input_guess(secret_word_len: int) -> str:
     """prompts the user for a guess of the correct length"""
-    guess: str = input(
-        f"Enter a {secret_word_len} character word: "
-    )  # asking user to input a ward for guess var.
+    guess: str = input(f"Enter a {secret_word_len} character word: ")
+    # asking user to input a ward for guess var.
 
     while len(guess) != secret_word_len:
         guess = input(f"That wasn't {secret_word_len} chars! Try again: ")
@@ -19,20 +18,21 @@ def contains_char(secret_word: str, char_guess: str) -> bool:
     """returns True if char_guess is found in secret_word, otherwise False"""
     assert len(char_guess) == 1
 
-    index: int = 0  # initializing index to start scanning the secret_word
+    index: int = 0
+    # initializing index to start scanning the secret_word
     while index < len(secret_word):
         if secret_word[index] == char_guess:
             return True
-    index += 1  # repeat loop until false.
+        index += 1
+    # repeat loop until false.
 
     return False
 
 
 def emojified(guess: str, secret: str) -> str:
     """returns a string of emojis evaluating the guess."""
-    assert len(guess) == len(
-        secret
-    )  # ensures both strings are the same length before comparing.
+    assert len(guess) == len(secret)
+    # makes sure both strings are the same length before comparing.
 
     white_box: str = "\U00002b1c"  # unicode emoji str
     green_box: str = "\U0001f7e9"
@@ -48,9 +48,8 @@ def emojified(guess: str, secret: str) -> str:
             emoji_results += yellow_box
         else:
             emoji_results += white_box
-        index += (
-            1  # causes the while loop to start over, looking at next letter via index.
-        )
+        index += 1
+        # causes the while loop to start over, looking at next letter via index.
 
     return emoji_results
 
@@ -63,16 +62,14 @@ def main(secret: str) -> None:  # main fn controls game state
 
     # the game loop will run as long as user has turns left and hasn't won yet
     while current_turn <= max_turns and not won:
-        print("f== Turn {current_turn}/{max_turns} ===")
+        print(f"== Turn {current_turn}/{max_turns} ===")
 
         # ask for guess using the helper function
-        user_guess: str = input_guess(
-            secret_word_len=len(secret)
-        )  # calls input_guess & stores result in user_guess
+        user_guess: str = input_guess(secret_word_len=len(secret))
+        # calls input_guess & stores result in user_guess
         # print the emojis using the helper function
-        print(
-            emojified(guess=user_guess, secret=secret)
-        )  # call emojified using the guess & secret word, prints result.
+        print(emojified(guess=user_guess, secret=secret))
+        # call emojified using the guess & secret word, prints result.
         # check for the win condition
         if user_guess == secret:
             won = True
@@ -85,5 +82,6 @@ def main(secret: str) -> None:  # main fn controls game state
     else:
         print(f"X/{max_turns} - sorry, try again tomorrow!")  # losing ouput
 
-    if __name__ == "__main__":
-        main(secret="codes")
+
+if __name__ == "__main__":
+    main(secret="codes")
