@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 """File for Bear class."""
 
 __author__ = "730941956"
@@ -22,3 +23,14 @@ class Bear:
     def eat(self, num_fish: int):
         """Increase hunger_score by the number of fish eaten."""
         self.hunger_score += num_fish
+=======
+"""File to define Bear class."""
+
+class Bear:
+    
+    def __init__(self):
+        return None
+    
+    def one_day(self):
+        return None 
+>>>>>>> f17cfa5f9d1259c4558beefcebee05b458e0e434
