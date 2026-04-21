@@ -8,66 +8,21 @@ It ensures everyone's VSCode is setup properly for success in the course.
 */
 {
     "name": "comp110-26s",
-    "image": "krisjordan/trailhead:0.2.1",
-    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+    "image": "python:3.11-bullseye",
     "workspaceFolder": "/workspace",
-    "remoteUser": "vscode",
-    "forwardPorts": [
-        1110
-    ],
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+    "forwardPorts": [1110],
     "customizations": {
         "vscode": {
             "extensions": [
                 "ms-python.python",
                 "ms-python.vscode-pylance",
                 "ms-python.black-formatter",
-                "ms-python.flake8",
-                "ms-toolsai.jupyter"
+                "ms-python.flake8"
             ],
             "settings": {
-                "files.autoSave": "onWindowChange",
-                "editor.formatOnSave": true,
-                "editor.formatOnSaveMode": "file",
-                "[python]": {
-                    "editor.defaultFormatter": "ms-python.black-formatter",
-                    "editor.formatOnSave": true
-                },
-                "python.defaultInterpreterPath": "/usr/bin/python3",
-                "python.testing.pytestEnabled": true,
-                "python.testing.unittestEnabled": false,
-                "python.analysis.typeCheckingMode": "basic",
-                "python.analysis.diagnosticSeverityOverrides": {
-                    "reportMissingParameterType": "error",
-                    "reportGeneralTypeIssues": "error",
-                    "reportDeprecated": "error",
-                    "reportImportCycles": "error"
-                },
-                "github.copilot.enable": {
-                "*": false
-                },
-                "github.copilot.editor.enableAutoCompletions": false,
-                "github.copilot.inlineSuggest.enable": false,
-                "files.exclude": {
-                    "**/.git": true,
-                    "**/.svn": true,
-                    "**/.hg": true,
-                    "**/CVS": true,
-                    "**/.DS_Store": true,
-                    "**/Thumbs.db": true,
-                    "**/__pycache__": true,
-                    "**/.pytest_cache": true,
-                    "**/.mypy_cache": true,
-                    "**/.flake8": true,
-                    "**/pyrightconfig.json": true,
-                    "**/.gitignore": true,
-                    "**/.vscode": true,
-                    "**/tools": true
-                }
+                "python.defaultInterpreterPath": "/usr/local/bin/python3"
             }
         }
-    },
-    "runArgs": [
-        "--name",
-        "comp110-26s"
-    ]
+    }
 }

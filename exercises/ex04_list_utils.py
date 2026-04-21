@@ -1,6 +1,6 @@
 """ex04 - list utility functions."""
 
-__author__ = "730941956"
+__author__ = "x"
 
 
 def all(int_list: list[int], target: int) -> bool:

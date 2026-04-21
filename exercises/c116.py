@@ -1,4 +1,4 @@
-"""exploring lists and while loops through a party rsvp example,"""
+"""exploring lists and while loops through a party rsvp example."""
 
 # Global list: friends who has RSVPed that they are going to the party
 rsvp_list: list[str] = ["Enrico", "yun"]

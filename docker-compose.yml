@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  comp110:
+    image: krisjordan/trailhead:0.2.1
+    container_name: comp110-26s
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    ports:
+      - "1110:1110"
+    user: root
+    command: sleep infinity
+    stdin_open: true
+    tty: true
